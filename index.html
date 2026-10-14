@@ -728,7 +728,10 @@
     var f = document.getElementById(id);
     if(!f) return;
     f.addEventListener('submit', function(){
-      if(f.nome && f.nome.value.trim() && (!f.whats || f.whats.value.trim())) ev('generate_lead', {form_id: id});
+      if(f.nome && f.nome.value.trim() && (!f.whats || f.whats.value.trim())){
+        ev('generate_lead', {form_id: id});
+        ev('conversion', {send_to: 'AW-18511792227/T62WCLGPhJwdEOOQjvtE', value: 1.0, currency: 'BRL'});
+      }
     });
   });
 })();
